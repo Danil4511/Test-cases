@@ -1,0 +1,5 @@
+tests\casesTest\StandartUserTest.class
+tests\base\BaseTest.class
+tests\casesTest\ProblemUserTest.class
+tests\casesTest\LockedOutUserTest.class
+tests\casesTest\PerformanceGlitchUserTest.class
