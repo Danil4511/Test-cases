@@ -123,17 +123,17 @@
                     <div class="method-list-content passed suite-All_Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="tests.casesTest.PerformanceGlitchUserTest" class="method navigator-link" hash-for-method="checkIsRedirectToListing">checkIsRedirectToListing</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-All_Test_Suite" title="tests.casesTest.RemoveFromCartTest" class="method navigator-link" hash-for-method="checkIsRedirectToListing">checkIsRedirectToListing</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-All_Test_Suite" title="tests.casesTest.StandartUserTest" class="method navigator-link" hash-for-method="checkIsRedirectToListing">checkIsRedirectToListing</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="tests.casesTest.RemoveFromCartPageTest" class="method navigator-link" hash-for-method="checkIsRedirectToListing">checkIsRedirectToListing</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="tests.casesTest.PerformanceGlitchUserTest" class="method navigator-link" hash-for-method="checkIsRedirectToListing">checkIsRedirectToListing</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-All_Test_Suite -->
@@ -160,8 +160,8 @@
                   </a> <!-- checkIsRedirectToListing -->
                   <span class="method-name">checkIsRedirectToListing</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [6] but found [3]
-	at pages.OurCases.listing.CasesListingPage.addAndRemoveElements(CasesListingPage.java:89)
-	at pages.OurCases.listing.CasesListingPage.doStandartActions(CasesListingPage.java:179)
+	at pages.OurCases.listing.CasesListingPage.addAndRemoveElements(CasesListingPage.java:84)
+	at pages.OurCases.listing.CasesListingPage.doStandartActions(CasesListingPage.java:146)
 	at tests.casesTest.ProblemUserTest.checkIsRedirectToListing(ProblemUserTest.java:17)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 37 stack frames
@@ -182,8 +182,8 @@
                   </a> <!-- checkIsRedirectToListing -->
                   <span class="method-name">checkIsRedirectToListing</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [6] but found [0]
-	at pages.OurCases.listing.CasesListingPage.checkCountCards(CasesListingPage.java:50)
-	at pages.OurCases.listing.CasesListingPage.doStandartActions(CasesListingPage.java:177)
+	at pages.OurCases.listing.CasesListingPage.checkCountCards(CasesListingPage.java:46)
+	at pages.OurCases.listing.CasesListingPage.doStandartActions(CasesListingPage.java:144)
 	at tests.casesTest.LockedOutUserTest.checkIsRedirectToListing(LockedOutUserTest.java:17)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 37 stack frames
@@ -195,7 +195,7 @@
           <div class="suite-All_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.casesTest.RemoveFromCartTest</span>
+              <span class="class-name">tests.casesTest.RemoveFromCartPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -253,7 +253,7 @@
       &lt;class name=&quot;tests.casesTest.LockedOutUserTest&quot;/&gt;
       &lt;class name=&quot;tests.casesTest.ProblemUserTest&quot;/&gt;
       &lt;class name=&quot;tests.casesTest.PerformanceGlitchUserTest&quot;/&gt;
-      &lt;class name=&quot;tests.casesTest.RemoveFromCartTest&quot;/&gt;
+      &lt;class name=&quot;tests.casesTest.RemoveFromCartPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- D:/Code/java/Frameworks/src/test/resources --&gt;
 &lt;/suite&gt; &lt;!-- All Test Suite --&gt;
@@ -297,23 +297,23 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkIsRedirectToListing')
 data.setCell(0, 2, 'tests.casesTest.PerformanceGlitchUserTest')
-data.setCell(0, 3, 13522);
+data.setCell(0, 3, 12973);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'checkIsRedirectToListing')
 data.setCell(1, 2, 'tests.casesTest.StandartUserTest')
-data.setCell(1, 3, 4591);
+data.setCell(1, 3, 5037);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'checkIsRedirectToListing')
-data.setCell(2, 2, 'tests.casesTest.RemoveFromCartTest')
-data.setCell(2, 3, 3252);
+data.setCell(2, 2, 'tests.casesTest.RemoveFromCartPageTest')
+data.setCell(2, 3, 3311);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'checkIsRedirectToListing')
 data.setCell(3, 2, 'tests.casesTest.ProblemUserTest')
-data.setCell(3, 3, 2622);
+data.setCell(3, 3, 2902);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'checkIsRedirectToListing')
 data.setCell(4, 2, 'tests.casesTest.LockedOutUserTest')
-data.setCell(4, 3, 1616);
+data.setCell(4, 3, 1697);
 window.suiteTableData['All_Test_Suite']= { tableData: data, tableDiv: 'times-div-All_Test_Suite'}
 return data;
 }
@@ -337,34 +337,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">tests.casesTest.RemoveFromCartTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">clearCookiesAndLocalStorage</span>
-                <br/>
-                <span class="ignored-method-name">close</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">tests.casesTest.PerformanceGlitchUserTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">close</span>
-                <br/>
-                <span class="ignored-method-name">clearCookiesAndLocalStorage</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
               <span class="ignored-class-name">tests.casesTest.ProblemUserTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">clearCookiesAndLocalStorage</span>
-                <br/>
                 <span class="ignored-method-name">close</span>
+                <br/>
+                <span class="ignored-method-name">clearCookiesAndLocalStorage</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">tests.casesTest.LockedOutUserTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">close</span>
+                <br/>
+                <span class="ignored-method-name">clearCookiesAndLocalStorage</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">tests.casesTest.RemoveFromCartPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">close</span>
+                <br/>
+                <span class="ignored-method-name">clearCookiesAndLocalStorage</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">tests.casesTest.PerformanceGlitchUserTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">clearCookiesAndLocalStorage</span>
                 <br/>
@@ -392,7 +392,7 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">checkIsRedirectToListing</span>
-                <span class="method-start">4817 ms</span>
+                <span class="method-start">5276 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
@@ -401,32 +401,32 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">checkIsRedirectToListing</span>
-                <span class="method-start">6467 ms</span>
+                <span class="method-start">6988 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.casesTest.PerformanceGlitchUserTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">checkIsRedirectToListing</span>
-                <span class="method-start">9105 ms</span>
+                <span class="method-start">9895 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.casesTest.RemoveFromCartTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.casesTest.RemoveFromCartPageTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">checkIsRedirectToListing</span>
-                <span class="method-start">22627 ms</span>
+                <span class="method-start">22870 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.casesTest.StandartUserTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">clearCookiesAndLocalStorage</span>
-                <span class="method-start">25879 ms</span>
+                <span class="method-start">26181 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">close</span>
-                <span class="method-start">25989 ms</span>
+                <span class="method-start">26290 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

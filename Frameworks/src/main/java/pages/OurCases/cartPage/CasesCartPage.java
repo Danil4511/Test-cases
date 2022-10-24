@@ -26,6 +26,9 @@ public class CasesCartPage extends BasePage {
 
     //Step 5
     public CasesCartPage checkMainElements() {
+        /**
+         * Check main elements of a cart page
+         */
         checkElementIsExist(cartTitle, nameLabels[0]);
         checkElementIsExist(cartTableLabel, nameLabels[1]);
         checkElementIsExist(cartDescLabel, nameLabels[2]);
@@ -41,12 +44,11 @@ public class CasesCartPage extends BasePage {
     public CasesCartPage removeProduct() {
         List<WebElement> product = (List<WebElement>)driver.findElements(cartItem);
 
+        //Removing product and checking what it is will be deleted
         driver.findElement(removeButton).click();
         // If == [](nothing) - all OK, the element is deleted
         Assert.assertNotEquals(driver.findElements(cartItem), product);
 
         return this;
     }
-
-
 }

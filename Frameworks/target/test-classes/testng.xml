@@ -7,7 +7,7 @@
             <class name="tests.casesTest.LockedOutUserTest"/>
             <class name="tests.casesTest.ProblemUserTest"/>
             <class name="tests.casesTest.PerformanceGlitchUserTest"/>
-            <class name="tests.casesTest.RemoveFromCartTest"/>
+            <class name="tests.casesTest.RemoveFromCartPageTest"/>
         </classes>
     </test>
 </suite>

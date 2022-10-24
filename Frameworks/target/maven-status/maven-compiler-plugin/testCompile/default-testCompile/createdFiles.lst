@@ -1,6 +1,6 @@
-tests\casesTest\RemoveFromCartTest.class
 tests\base\BaseTest.class
 tests\casesTest\ProblemUserTest.class
+tests\casesTest\RemoveFromCartPageTest.class
 tests\casesTest\StandartUserTest.class
 tests\casesTest\LockedOutUserTest.class
 tests\casesTest\PerformanceGlitchUserTest.class

@@ -4,15 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 import pages.base.BasePage;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-
-import static constants.Constant.urls.TEST_CASES_HOME_PAGE;
 
 public class CasesListingPage extends BasePage {
     public CasesListingPage(WebDriver driver) {
@@ -35,9 +29,10 @@ public class CasesListingPage extends BasePage {
 
 
     /**
-     * ШАГ 2
+     * Step 2
      */
     public CasesListingPage checkMainElements() {
+        //Check main elements on the listing page
         int countTitle = driver.findElements(title).size();
         int countShoppingCart = driver.findElements(shoppingCart).size();
         int countSortContainer = driver.findElements(sortContainer).size();
@@ -45,86 +40,89 @@ public class CasesListingPage extends BasePage {
         return this;
     }
 
-    public CasesListingPage checkCountCards() {
+    public void checkCountCards() {
+        //Check count of products on the page
         int countCard = driver.findElements(card).size();
         Assert.assertEquals(countCard, 6);
 
         compareCards(2);
 
-        return this;
     }
 
     /**
      * ШАГ 3
      */
-    public CasesListingPage checkAddBtn() {
-        List<WebElement> listBtns = (List<WebElement>)
-                driver.findElements(By.xpath
-                        ("//button[text()='Add to cart']"));
+    public void checkAddBtn() {
+        List<WebElement> listBtns = driver.findElements(addBtn);
 
-        //Check button is active?
-        for (int i = 0;i<listBtns.size();i++) {
-            Boolean activeBtn = Boolean.valueOf(listBtns.get(i).getAttribute("disabled"));
+        //Check button "Add to Cart" is active?
+        for (WebElement listBtn : listBtns) {
+            Boolean activeBtn = Boolean.valueOf(listBtn.getAttribute("disabled"));
             Assert.assertEquals(false, activeBtn);
         }
 
-
-        return this;
     }
 
-    //Click PRODUCTS
     /**
      * ШАГ 4 и 5
+     * We need to add, check it, and after remove all elements from a crt
+     * Click all "Add to Cart" buttons
+     * Fix it
+     * Click all "Remove" buttons
+     * Fix it
      */
-    public CasesListingPage addAndRemoveElements() {
-        List<WebElement> listBtns = (List<WebElement>)
-                driver.findElements(By.xpath
-                        ("//button[text()='Add to cart']"));
+    public void addAndRemoveElements() {
+        List<WebElement> listBtns = driver.findElements(addBtn);
 
-        for (int i = 0;i<listBtns.size();i++)
-            listBtns.get(i).click();
+        //Add all elements to a cart
+        for (WebElement listBtn : listBtns)
+            listBtn.click();
         By countAddToCart = By.xpath("//a[@class='shopping_cart_link']");
 
-        int countAdd = Integer.valueOf(driver.findElement(countAddToCart).getAttribute("innerText"));
+        //Check count of our elements
+        int countAdd = Integer.parseInt(driver.findElement(countAddToCart).getAttribute("innerText"));
         Assert.assertEquals(countAdd, 6);
 
         //remove elements from cart
         listBtns = driver.findElements(By.xpath
                 ("//button[text()='Remove']"));
-        for (int i = 0;i<listBtns.size();i++)
-            listBtns.get(i).click();
+        for (WebElement listBtn : listBtns)
+            listBtn.click();
 
+        //Check that all elements was removed
         countAddToCart = By.xpath("//a[@class='shopping_cart_link']");
         String CountAdd = driver.findElement(countAddToCart).getAttribute("innerText");
         Assert.assertEquals(CountAdd, "");
 
-        return this;
     }
 
 
 
     /**
      * ШАГ 6
+     * We need sort reverse our products
      */
-    public CasesListingPage reverseCards() {
+    public void reverseCards() {
         driver.findElement(sortContainer).click();
         WebElement selectOption = driver.findElement(reverseOption);
         waitElementIsVisible(selectOption).click();
 
         compareCards(1);
 
-        return this;
     }
 
     /**
      * ШАГ 7
+     * We need click to the menu button and
+     * check all elements and
+     * log out from the site
      */
-    public CasesListingPage menuLinksAndLogout() {
+    public void menuLinksAndLogout() {
         driver.findElement(menuBtn).click();
         WebElement selectOption = driver.findElement(logOutBtn);
         waitElementIsVisible(selectOption);
 
-        List<WebElement> listLinks = (List<WebElement>)driver.findElements(menuLinks);
+        List<WebElement> listLinks = driver.findElements(menuLinks);
         for (int i = 0;i<listLinks.size();i++)
         {
             //If not equal - not all elements is ok
@@ -132,46 +130,15 @@ public class CasesListingPage extends BasePage {
                 Assert.fail();
         }
 
-        /**
-         * ШАГ 8 - LOGOUT
-         */
+        //ШАГ 8 - LOGOUT
         selectOption.click();
         checkLogsElements();
 
-        return this;
     }
 
-    public CasesListingPage addAnyProduct() {
-        List<WebElement> listBtns = (List<WebElement>)
-                driver.findElements(By.xpath
-                        ("//button[text()='Add to cart']"));
-
-        // Chose random product from list
-        int chosenProduct = (int) (Math.random()*6);
-        listBtns.get(chosenProduct).click();
-        // check icon near a cart == 1
-        int countAdd = Integer.valueOf(driver.findElement(shoppingCart).getAttribute("innerText"));
-        Assert.assertEquals(countAdd, 1);
-
-        //Checking the button has label "REMOVE"
-        chosenProduct+=1;
-        By productPath = By.xpath("//div[@class='inventory_item']["+chosenProduct+"]//button[text()='Remove']");
-        Assert.assertEquals(driver.findElement(productPath).getText(), "REMOVE");
-
-        /**
-         * Our data about chosen product,
-         * we need to save this data to compare it next step
-         */
-        WebElement choseProduct = driver.findElement(By.xpath("//div[@class='inventory_item']["+chosenProduct+"]"));
-        ChosenProduct = choseProduct.getText();
-
-        //Press button cart
-        driver.findElement(shoppingCart).click();
-
-
-        return this;
-    }
-
+    /**
+     * This method needs for collect all standart method in one
+     */
     public void doStandartActions() {
         checkMainElements();
         checkCountCards();
@@ -179,6 +146,33 @@ public class CasesListingPage extends BasePage {
         addAndRemoveElements();
         reverseCards();
         menuLinksAndLogout();
+    }
+
+    //This method for the last test-case "RemoveFromCartPageTest"
+    public void addAnyProduct() {
+        List<WebElement> listBtns = driver.findElements(By.xpath
+                ("//button[text()='Add to cart']"));
+
+        // Chose random product from list
+        int chosenProduct = (int) (Math.random()*6);
+        listBtns.get(chosenProduct).click();
+        // check icon near a cart == 1
+        int countAdd = Integer.parseInt(driver.findElement(shoppingCart).getAttribute("innerText"));
+        Assert.assertEquals(countAdd, 1);
+
+        //Checking the button has label "REMOVE"
+        chosenProduct+=1;
+        By productPath = By.xpath("//div[@class='inventory_item']["+chosenProduct+"]//button[text()='Remove']");
+        Assert.assertEquals(driver.findElement(productPath).getText(), "REMOVE");
+
+        //  * Our data about chosen product,
+        //  * we need to save this data to compare it next step
+        WebElement choseProduct = driver.findElement(By.xpath("//div[@class='inventory_item']["+chosenProduct+"]"));
+        ChosenProduct = choseProduct.getText();
+
+        //Press button cart
+        driver.findElement(shoppingCart).click();
+
     }
 
 }

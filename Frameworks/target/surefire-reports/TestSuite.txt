@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 38.061 s <<< FAILURE! - in TestSuite
-tests.casesTest.LockedOutUserTest.checkIsRedirectToListing  Time elapsed: 1.651 s  <<< FAILURE!
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 38.332 s <<< FAILURE! - in TestSuite
+tests.casesTest.LockedOutUserTest.checkIsRedirectToListing  Time elapsed: 1.711 s  <<< FAILURE!
 java.lang.AssertionError: expected [6] but found [0]
 	at tests.casesTest.LockedOutUserTest.checkIsRedirectToListing(LockedOutUserTest.java:17)
 
-tests.casesTest.ProblemUserTest.checkIsRedirectToListing  Time elapsed: 2.637 s  <<< FAILURE!
+tests.casesTest.ProblemUserTest.checkIsRedirectToListing  Time elapsed: 2.906 s  <<< FAILURE!
 java.lang.AssertionError: expected [6] but found [3]
 	at tests.casesTest.ProblemUserTest.checkIsRedirectToListing(ProblemUserTest.java:17)
 

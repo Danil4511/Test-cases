@@ -15,10 +15,12 @@ public class Cases_home_page extends BasePage {
     private final By pass = By.xpath("//input[@placeholder='Password']");
     private final By loginBtn = By.xpath("//input[@value='Login']");
 
+    //Step 1 & 2
     public Cases_home_page enterUserData(String LOGIN, String PASSWORD) {
-
+        //Step 1 - check all elements on the page
         checkLogsElements();
 
+        //Step 2 - Log in
         driver.findElement(login).sendKeys(LOGIN);
         driver.findElement(pass).sendKeys(PASSWORD);
         driver.findElement(loginBtn).click();
